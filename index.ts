@@ -12,6 +12,9 @@ connectDatabase();
 app.use(express.json());
 app.use('/api/users', userRouter)
 app.use('/api/prods', prodRouter)
+
+console.log('Hello user-feature');
+
 const port = 3000;
 
 // app.get('/api/user', (request : Request,response : Response, next : NextFunction) => {
