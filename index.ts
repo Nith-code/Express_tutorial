@@ -14,6 +14,7 @@ app.use('/api/users', userRouter)
 app.use('/api/prods', prodRouter)
 
 console.log('Hello user-feature');
+console.log('Hello feature item1');
 
 const port = 3000;
 
