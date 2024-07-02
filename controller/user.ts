@@ -41,7 +41,6 @@ export async function createUsers (req : Request, res : Response) {
   const data = req.body;
   const u = await create(data.username, data.email, data.password, data.status);
   return res.json(u);
-  // const newUser = await create
 }
 
 export function getUser(req: Request, res: Response) {
