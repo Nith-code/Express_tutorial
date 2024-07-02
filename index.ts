@@ -1,11 +1,17 @@
 import express, { NextFunction, Request, Response } from 'express'
-import userRouter from './router/user';
-import { getProduct } from './handler/product';
-import productRouter from './router/product';
+import userRouter from './Route/user';
+import prodRouter from './Route/product';
+import * as dotenv from 'dotenv';
+import connectDatabase from './database/connection';
+dotenv.config();
+
 
 const app = express();
-app.use('/api/user', userRouter)
-app.use('/api/product',productRouter)
+connectDatabase();
+
+app.use(express.json());
+app.use('/api/users', userRouter)
+app.use('/api/prods', prodRouter)
 const port = 3000;
 
 // app.get('/api/user', (request : Request,response : Response, next : NextFunction) => {
